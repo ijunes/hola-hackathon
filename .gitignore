@@ -42,7 +42,7 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
-
+app/app.iml
 .idea/
 .idea
 .idea/workspace.xml

@@ -79,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
     // ===========================================================
     private void addFragment() {
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        ProfileFragment profileFragment = new ProfileFragment();
+        final ProfileFragment profileFragment = new ProfileFragment();
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.add(R.id.frame_container, profileFragment, ProfileFragment.TAG);
         fragmentTransaction.commit();

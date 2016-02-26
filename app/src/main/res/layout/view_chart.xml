@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorTransparentWhite"
+    android:background="@drawable/chart_gradient"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="40"
-        android:background="@drawable/photo_gradient"
+        android:layout_weight="60"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/dim_photo_info_container_padding">
@@ -27,7 +26,7 @@
 
             <TextView
                 android:id="@+id/chartCharacter"
-                style="@style/PhotoText"
+                style="@style/ChartDimensionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/chartHighest"
@@ -56,7 +55,7 @@
 
             <TextView
                 android:id="@+id/chartFamilyBackground"
-                style="@style/PhotoText"
+                style="@style/ChartDimensionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/chartMid"
@@ -85,7 +84,7 @@
 
             <TextView
                 android:id="@+id/chartArtisticPassion"
-                style="@style/PhotoText"
+                style="@style/ChartDimensionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/chartLow"
@@ -98,6 +97,6 @@
         android:id="@+id/bar_chart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="70" />
+        android:layout_weight="40" />
 
 </LinearLayout>

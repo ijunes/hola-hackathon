@@ -66,4 +66,14 @@ public enum ChartGenerator {
         return colors;
     }
 
+    public int[] getFirstThree(ArrayList<BarEntry> values) {
+        final int[] dimens = new int[3];
+
+        for (int i = 0; i < dimens.length; i++) {
+            dimens[i] = (int) values.get(i).getVal();
+        }
+
+        return dimens;
+    }
+
 }
