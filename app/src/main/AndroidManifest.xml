@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Score"
+            android:name=".ScoreActivity"
             android:label="@string/title_activity_score"
             android:parentActivityName=".ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
