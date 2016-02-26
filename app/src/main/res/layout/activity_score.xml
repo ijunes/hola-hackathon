@@ -41,7 +41,7 @@
         app:viewpager_animatedHeaderImage="true"
         app:viewpager_disableToolbar="false"
 
-        />
+        android:background="#cccccc" />
 
     <view
         android:clickable="true"

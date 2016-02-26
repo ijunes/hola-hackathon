@@ -19,7 +19,8 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     List<Object> contents;
 
     static final int TYPE_HEADER = 0;
-    static final int TYPE_CELL = 1;
+    static final int TYPE_GUIDE_CELL = 1;
+    static final int TYPE_CELL = 2;
 
     public ScoreViewAdapter(List<Object> contents) {
         this.contents = contents;
@@ -30,6 +31,8 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         switch (position) {
             case 0:
                 return TYPE_HEADER;
+            case 1:
+               return  TYPE_GUIDE_CELL;
             default:
                 return TYPE_CELL;
         }
@@ -52,6 +55,13 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 };
 
 
+            }
+
+            case TYPE_GUIDE_CELL:{
+                view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.card_item_medium, parent, false);
+                return new RecyclerView.ViewHolder(view) {
+                };
             }
             case TYPE_CELL: {
                 view = LayoutInflater.from(parent.getContext())

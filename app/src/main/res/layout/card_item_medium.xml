@@ -3,10 +3,41 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:text="New Text"
-        android:id="@+id/textView2"
-        android:layout_gravity="left|top" />
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top"
+        android:layout_marginBottom="@dimen/cardMarginVertical"
+        android:layout_marginLeft="@dimen/cardMarginHorizontal"
+        android:layout_marginRight="@dimen/cardMarginHorizontal"
+        android:layout_marginTop="@dimen/cardMarginVertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="New Text"
+            android:id="@+id/guideMeView"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="left|top" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="We have some suggestions to help you to start a conversation.Select 5 to send to the match"
+            android:id="@+id/dimensionTextView"
+            android:layout_below="@+id/guideMeView"
+            android:textColor="#4a4a4a"
+            android:singleLine="false"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="false"
+            android:paddingTop="10dp" />
+
+
+
+    </RelativeLayout>
+
+
+
+
 </FrameLayout>
