@@ -38,6 +38,8 @@ public class ScoreActivity extends AppCompatActivity {
         viewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
         Toolbar toolbar = viewPager.getToolbar();
         if (toolbar != null) {
+            toolbar.setTitle("Justin");
+
             setSupportActionBar(toolbar);
 
             ActionBar actionBar = getSupportActionBar();
