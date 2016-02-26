@@ -10,7 +10,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/score_app_bar">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -42,12 +43,27 @@
 
         />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+    <view
+        android:clickable="true"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_margin="@dimen/padding_card"
+        class="mbanje.kurt.fabbutton.FabButton"
+        app:layout_anchor="@id/materialViewPager"
+        app:layout_anchorGravity="bottom|right|end"
+        android:id="@+id/determinate"
+        android:color="?attr/colorPrimaryDark"
+        app:fbb_showShadow="true"
+        android:src="@drawable/ic_fab_play"
+        android:visibility="visible"
+        android:indeterminate="false"
+        android:max="100"
+        app:fbb_autoStart="true"
+        app:fbb_progressColor="?attr/colorAccent"
+        app:fbb_progressWidthRatio="0.1"
+        app:fbb_endBitmap="@drawable/ic_fab_complete"
+        app:fbb_showEndBitmap="true"
+        app:fbb_hideProgressOnComplete="true"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

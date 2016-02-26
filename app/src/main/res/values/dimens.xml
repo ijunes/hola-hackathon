@@ -5,4 +5,33 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--
+        Resources for the ProfileFragment
+     -->
+    <dimen name="dim_toolbar_elevation">6dp</dimen>
+    <dimen name="dim_floating_button_size">56dp</dimen>
+    <dimen name="dim_floating_button_margin">16dp</dimen>
+    <dimen name="dim_floating_button_elevation">6dp</dimen>
+    <dimen name="dim_floating_button_margin_top">370dp</dimen>
+    <dimen name="dim_floating_button_margin_right">22dp</dimen>
+
+    <dimen name="dim_photo_info_view_size">400dp</dimen>
+
+    <dimen name="dim_photo_info_container_padding">16dp</dimen>
+    <dimen name="dim_photo_info_container_size">60dp</dimen>
+    <dimen name="dim_photo_info_separator_height">16dp</dimen>
+    <dimen name="dim_photo_info_separator_width">1dp</dimen>
+    <dimen name="dim_photo_info_Separator_margin">14dp</dimen>
+    <dimen name="dim_photo_text_size">16sp</dimen>
+
+    <dimen name="dim_floating_view_size">70dp</dimen>
+    <dimen name="dim_floating_icon_size">24dp</dimen>
+    <dimen name="dim_floating_text_margin">16dp</dimen>
+    <dimen name="dim_floating_text_size">16sp</dimen>
+
+    <dimen name="dim_chart_view_size">200dp</dimen>
+    <dimen name="dim_chart_percent_size">19sp</dimen>
+
+    <dimen name="padding_card">16dp</dimen>
 </resources>

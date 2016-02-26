@@ -12,8 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.eharmony.hola.fragment.RecyclerViewFragment;
+import com.eharmony.hola.widgets.ProgressHelper;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
+
+import mbanje.kurt.fabbutton.FabButton;
 
 public class ScoreActivity extends AppCompatActivity {
 
@@ -115,15 +118,34 @@ public class ScoreActivity extends AppCompatActivity {
             }
         };
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        final FabButton button = (FabButton)  findViewById(R.id.determinate);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        final ProgressHelper helper = new ProgressHelper(button,this);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            int count = 0;
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                if(count == 0) {
+                    helper.startDeterminate();
+                }
+                if (count%10 < 5){
+                    helper.incrementCount();
+                }
+                else{
+                    helper.decrementCount();
+                }
+                count++;
             }
         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }

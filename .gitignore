@@ -16,7 +16,8 @@
 bin/
 gen/
 out/
-
+**/.DS_Store
+.DS_Store
 # Gradle files
 .gradle/
 build/
@@ -43,5 +44,5 @@ captures/
 gen-external-apklibs
 
 .idea/
-
+.idea/**
 **/*.iml
