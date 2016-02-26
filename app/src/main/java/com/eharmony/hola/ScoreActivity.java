@@ -90,8 +90,8 @@ public class ScoreActivity extends AppCompatActivity {
 
 
 
-                ColorDrawable colorDrawable = new ColorDrawable(0x328AA1);
-                return HeaderDesign.fromColorResAndDrawable(R.color.colorBlueOne,colorDrawable );
+                ColorDrawable colorDrawable = new ColorDrawable(0xFFFFFF);
+                return HeaderDesign.fromColorResAndDrawable(R.color.colorWhite,colorDrawable );
 
 
             }
