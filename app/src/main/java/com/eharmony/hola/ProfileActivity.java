@@ -1,5 +1,6 @@
 package com.eharmony.hola;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 
+import com.eharmony.hola.adapter.ScoreViewAdapter;
 import com.eharmony.hola.fragment.ProfileFragment;
+import com.eharmony.hola.fragment.RecyclerViewFragment;
 
 import butterknife.ButterKnife;
 
@@ -64,7 +67,8 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.like:
-
+                final Intent intent = new Intent(ProfileActivity.this, ScoreActivity.class);
+                ProfileActivity.this.startActivity(intent);
                 return true;
             case R.id.hide:
 
