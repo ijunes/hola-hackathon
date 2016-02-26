@@ -35,4 +35,7 @@ dependencies {
         transitive = true
     }
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.2'
+    compile 'mbanje.kurt:fabbutton:1.+'
+    compile project(':fabbutton')
+    compile 'com.android.support:cardview-v7:23.1.1'
 }
