@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 
 import com.eharmony.hola.adapter.ScoreViewAdapter;
+import com.eharmony.hola.event.ChartClickEvent;
 import com.eharmony.hola.fragment.ProfileFragment;
 import com.eharmony.hola.fragment.RecyclerViewFragment;
+import com.eharmony.hola.util.Constants;
+import com.eharmony.hola.util.EventBus;
+import com.squareup.otto.Subscribe;
 
 import butterknife.ButterKnife;
 
@@ -45,7 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
         toolbar = ButterKnife.findById(this, R.id.toolbar);
         setupToolbarInfo();
         setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         toolbar.setBackgroundColor(Color.argb(192, 255, 255, 255));
@@ -67,14 +72,33 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.like:
-                final Intent intent = new Intent(ProfileActivity.this, ScoreActivity.class);
-                ProfileActivity.this.startActivity(intent);
+
                 return true;
             case R.id.hide:
 
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            EventBus.INSTANCE.getBus().register(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            EventBus.INSTANCE.getBus().unregister(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
         }
     }
 
@@ -93,6 +117,15 @@ public class ProfileActivity extends AppCompatActivity {
         final Resources res = getResources();
         toolbar.setTitle(res.getString(R.string.user_name));
         toolbar.setSubtitle(res.getString(R.string.user_area));
+    }
+
+    @Subscribe
+    public void startCardActivity(final ChartClickEvent chartClickEvent) {
+        if (chartClickEvent != null) {
+            final Intent intent = new Intent(ProfileActivity.this, ScoreActivity.class);
+            intent.putExtra(Constants.CHART_BUNDLE, chartClickEvent.getChartModel());
+            startActivity(intent);
+        }
     }
     // ===========================================================
     // Inner and Anonymous Classes
