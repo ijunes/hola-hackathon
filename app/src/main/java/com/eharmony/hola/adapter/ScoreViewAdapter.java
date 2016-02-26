@@ -49,6 +49,8 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         .inflate(R.layout.card_item_large, parent, false);
                 return new RecyclerView.ViewHolder(view) {
                 };
+
+
             }
             case TYPE_CELL: {
                 view = LayoutInflater.from(parent.getContext())
