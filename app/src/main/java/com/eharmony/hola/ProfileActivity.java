@@ -1,83 +1,92 @@
 package com.eharmony.hola;
 
-import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
+import android.view.Window;
 
-import com.eftimoff.androidplayer.Player;
-import com.eftimoff.androidplayer.actions.property.PropertyAction;
+import com.eharmony.hola.fragment.ProfileFragment;
+
+import butterknife.ButterKnife;
 
 public class ProfileActivity extends AppCompatActivity {
+// ===========================================================
+    // Constants
+    // ===========================================================
 
+    // ===========================================================
+    // Fields
+    // ===========================================================
+    private Toolbar toolbar;
+    // ===========================================================
+    // Constructors
+    // ===========================================================
 
+    // ===========================================================
+    // Getter & Setter
+    // ===========================================================
+
+    // ===========================================================
+    // Methods for/from SuperClass/Interfaces
+    // ===========================================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Justin");
-        //Set after its been updated
+
+        toolbar = ButterKnife.findById(this, R.id.toolbar);
+        setupToolbarInfo();
         setSupportActionBar(toolbar);
 
-
-        final View.OnClickListener fabListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Intent intent = new Intent(ProfileActivity.this, ScoreActivity.class);
-                ProfileActivity.this.startActivity(intent);
-            }
-        };
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", fabListener).show();
-            }
-        });
-
-        animateSampleOne(toolbar, findViewById(R.id.content_profile), fab);
+        addFragment();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.like:
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                return true;
+            case R.id.hide:
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
-    private void animateSampleOne(View toolbar, View activityMainContentLayout, View activityMainPinkFab) {
-        final PropertyAction fabAction = PropertyAction.newPropertyAction(activityMainPinkFab).scaleX(0).scaleY(0).duration(750).interpolator(new AccelerateDecelerateInterpolator()).build();
-        final PropertyAction headerAction = PropertyAction.newPropertyAction(toolbar).interpolator(new DecelerateInterpolator()).translationY(-200).duration(550).alpha(0.4f).build();
-        final PropertyAction bottomAction = PropertyAction.newPropertyAction(activityMainContentLayout).translationY(500).duration(750).alpha(0f).build();
-        Player.init().
-                animate(headerAction).
-                then().
-                animate(bottomAction).
-                play();
+    // ===========================================================
+    // Methods
+    // ===========================================================
+    private void addFragment() {
+        final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        ProfileFragment profileFragment = new ProfileFragment();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.add(R.id.frame_container, profileFragment, ProfileFragment.TAG);
+        fragmentTransaction.commit();
     }
+
+    private void setupToolbarInfo() {
+        final Resources res = getResources();
+        toolbar.setTitle(res.getString(R.string.user_name));
+        toolbar.setSubtitle(res.getString(R.string.user_area));
+    }
+    // ===========================================================
+    // Inner and Anonymous Classes
+    // ===========================================================
 }
