@@ -38,7 +38,7 @@ public class DimensionViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void  initCell(){
-        
+
     }
 
 }
