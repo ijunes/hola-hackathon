@@ -25,24 +25,27 @@ android:layout_height="500dp">
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:id="@+id/percentageText"
             android:layout_gravity="left|center_vertical"
             android:text="98%"
             android:textColor="#8fb43e"
             android:layout_alignParentTop="true"
             android:textSize="40sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:paddingTop="20dp" />
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text="Character"
             android:id="@+id/dimensionTextView"
-            android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/percentageText"
-            android:textColor="#fefefe"
-            android:singleLine="false" />
+            android:layout_below="@+id/percentageText"
+            android:textColor="#4a4a4a"
+            android:singleLine="false"
+            android:textSize="40sp"
+            android:layout_alignParentBottom="false"
+            android:paddingTop="20dp" />
 
 
     </RelativeLayout>
