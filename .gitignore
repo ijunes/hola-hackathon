@@ -44,5 +44,7 @@ captures/
 gen-external-apklibs
 
 .idea/
+.idea
+.idea/workspace.xml
 .idea/**
 **/*.iml
