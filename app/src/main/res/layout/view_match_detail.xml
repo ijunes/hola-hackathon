@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/dim_match_detail_section_container_margin_left"
+    android:paddingStart="@dimen/dim_match_detail_section_container_margin_left">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dim_match_detail_section_container_margin"
+        android:layout_marginTop="@dimen/dim_match_detail_section_container_margin"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/MatchDetailTextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_field_margin"
+            android:text="@string/match_detail_occupation_detail" />
+
+        <TextView
+            style="@style/MatchDetailTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_section_margin"
+            android:text="@string/match_detail_occupation" />
+
+        <TextView
+            style="@style/MatchDetailTextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_field_margin"
+            android:text="@string/match_detail_education_detail" />
+
+        <TextView
+            style="@style/MatchDetailTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_section_margin"
+            android:text="@string/match_detail_education" />
+
+        <TextView
+            style="@style/MatchDetailTextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_field_margin"
+            android:text="@string/match_detail_school_detail" />
+
+        <TextView
+            style="@style/MatchDetailTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_section_margin"
+            android:text="@string/match_detail_school" />
+
+        <TextView
+            style="@style/MatchDetailTextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_field_margin"
+            android:text="@string/match_detail_religion_detail" />
+
+        <TextView
+            style="@style/MatchDetailTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_section_margin"
+            android:text="@string/match_detail_religion" />
+
+        <TextView
+            style="@style/MatchDetailTextDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_match_detail_field_margin"
+            android:text="@string/match_detail_political_view_detail" />
+
+        <TextView
+            style="@style/MatchDetailTextField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/match_detail_political_view" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dim_match_detail_section_container_margin"
+        android:layout_marginTop="@dimen/dim_match_detail_section_container_margin"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/icon_kids"
+                android:layout_width="@dimen/dim_match_detail_icon_size"
+                android:layout_height="@dimen/dim_match_detail_icon_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_family" />
+
+            <TextView
+                android:id="@+id/text_kids"
+                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
+                android:layout_toEndOf="@id/icon_kids"
+                android:text="@string/match_detail_kids" />
+
+            <ImageView
+                android:id="@+id/icon_drink"
+                android:layout_width="@dimen/dim_match_detail_icon_size"
+                android:layout_height="@dimen/dim_match_detail_icon_size"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/text_kids"
+                android:src="@drawable/icon_drinks" />
+
+            <TextView
+                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
+                android:layout_toEndOf="@id/icon_drink"
+                android:text="@string/match_detail_drink" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/icon_smoke"
+                android:layout_width="@dimen/dim_match_detail_icon_size"
+                android:layout_height="@dimen/dim_match_detail_icon_size"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_smokes" />
+
+            <TextView
+                android:id="@+id/text_smoke"
+                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
+                android:layout_toEndOf="@id/icon_smoke"
+                android:text="@string/match_detail_smoke" />
+
+            <ImageView
+                android:id="@+id/icon_pet"
+                android:layout_width="@dimen/dim_match_detail_icon_size"
+                android:layout_height="@dimen/dim_match_detail_icon_size"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/text_smoke"
+                android:src="@drawable/icon_pets" />
+
+            <TextView
+                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
+                android:layout_toEndOf="@id/icon_pet"
+                android:text="@string/match_detail_pet" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dim_match_detail_section_container_margin"
+        android:layout_marginTop="@dimen/dim_match_detail_section_container_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/match_detail_about_me" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/match_detail_about_me_detail" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
 
-    <com.eharmony.hola.widget.PhotoView
-        android:id="@+id/photo_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dim_photo_info_view_size" />
+        android:layout_height="wrap_content">
 
-    <com.eharmony.hola.widget.ChartView
-        android:id="@+id/chart_view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dim_chart_view_size"
-        android:layout_below="@id/photo_view" />
+        <com.eharmony.hola.widget.PhotoView
+            android:id="@+id/photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_photo_info_view_size" />
 
-    <ImageButton
-        android:layout_width="@dimen/dim_floating_button_size"
-        android:layout_height="@dimen/dim_floating_button_size"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="@dimen/dim_floating_button_margin_right"
-        android:layout_marginRight="@dimen/dim_floating_button_margin_right"
-        android:layout_marginTop="@dimen/dim_floating_button_margin_top"
-        android:background="@drawable/ripple_floating_button"
-        android:elevation="@dimen/dim_floating_button_elevation"
-        android:src="@mipmap/ic_launcher" />
+        <com.eharmony.hola.widget.ChartView
+            android:id="@+id/chart_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_chart_view_size"
+            android:layout_below="@id/photo_view" />
 
-</RelativeLayout>
+        <com.eharmony.hola.widget.MatchDetailView
+            android:id="@+id/match_detail_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chart_view" />
+
+        <ImageButton
+            android:layout_width="@dimen/dim_floating_button_size"
+            android:layout_height="@dimen/dim_floating_button_size"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/dim_floating_button_margin_right"
+            android:layout_marginRight="@dimen/dim_floating_button_margin_right"
+            android:layout_marginTop="@dimen/dim_floating_button_margin_top"
+            android:background="@drawable/ripple_floating_button"
+            android:elevation="@dimen/dim_floating_button_elevation"
+            android:src="@mipmap/ic_launcher" />
+
+    </RelativeLayout>
+</ScrollView>

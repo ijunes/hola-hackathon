@@ -104,7 +104,7 @@ public class ChartView extends LinearLayout {
 
         setBarChartData();
         // add a nice and smooth animation
-        barChart.animateY(2500);
+        barChart.animateXY(2500, 2500);
 
         barChart.getLegend().setEnabled(false);
     }
