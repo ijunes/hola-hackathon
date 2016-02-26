@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -137,5 +138,25 @@ public class ScoreActivity extends AppCompatActivity {
     @Subscribe
     public void questionRemoved(QuestionRemovedEvent event) {
         helper.decrementCount();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            EventBus.INSTANCE.getBus().register(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            EventBus.INSTANCE.getBus().unregister(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
+        }
     }
 }

@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text="We have some suggestions to help you to start a conversation.Select 5 to send to the match."
-            android:id="@+id/dimensionTextView"
+            android:id="@+id/guideme_detail_textview"
             android:layout_below="@+id/guideme_textview"
             android:textColor="#999999"
             android:singleLine="false"
