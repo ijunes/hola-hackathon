@@ -1,5 +1,6 @@
 package com.eharmony.hola;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -64,7 +65,8 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.like:
-
+                Intent intent = new Intent(ProfileActivity.this,ScoreActivity.class);
+                ProfileActivity.this.startActivity(intent);
                 return true;
             case R.id.hide:
 
