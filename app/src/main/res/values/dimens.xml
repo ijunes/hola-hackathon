@@ -30,7 +30,8 @@
     <dimen name="dim_floating_text_margin">16dp</dimen>
     <dimen name="dim_floating_text_size">16sp</dimen>
 
-    <dimen name="dim_chart_view_size">200dp</dimen>
-    <dimen name="dim_chart_percent_size">19sp</dimen>
+    <dimen name="dim_chart_view_size">180dp</dimen>
+    <dimen name="dim_chart_percent_size">26sp</dimen>
+    <dimen name="dim_chart_dimension_size">14sp</dimen>
 
 </resources>

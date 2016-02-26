@@ -4,7 +4,10 @@ import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eharmony.hola.R;
 import com.eharmony.hola.util.ChartGenerator;
@@ -14,7 +17,10 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -33,6 +39,9 @@ public class ChartView extends LinearLayout {
     // Fields
     // ===========================================================
     private BarChart barChart;
+    private TextView chartHighest;
+    private TextView chartMid;
+    private TextView chartLow;
     // ===========================================================
     // Constructors
     // ===========================================================
@@ -63,6 +72,9 @@ public class ChartView extends LinearLayout {
         super.onFinishInflate();
 
         barChart = ButterKnife.findById(this, R.id.bar_chart);
+        chartHighest = ButterKnife.findById(this, R.id.chartHighest);
+        chartMid = ButterKnife.findById(this, R.id.chartMid);
+        chartLow = ButterKnife.findById(this, R.id.chartLow);
 
         init();
     }
@@ -105,8 +117,45 @@ public class ChartView extends LinearLayout {
 
         final BarData data = new BarData(xValues, dataSets);
 
+        barChart.getAxisLeft().setEnabled(false);
+        barChart.getAxisRight().setEnabled(false);
+
         barChart.setData(data);
         barChart.invalidate();
+
+        final int[] dimens = ChartGenerator.INSTANCE.getFirstThree(yValues);
+
+        final int highest = 0;
+        final int mid = 1;
+        final int low = 2;
+
+        for (int i = 0; i < dimens.length; i++) {
+            switch (i) {
+                case highest:
+                    chartHighest.setText(dimens[i] + "%");
+                    break;
+                case mid:
+                    chartMid.setText(dimens[i] + "%");
+                    break;
+                case low:
+                    chartLow.setText(dimens[i] + "%");
+                    break;
+            }
+        }
+
+        barChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+                final String text = "Value: " + e.getVal() + " Index: " + e.getXIndex();
+                Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
+                // TODO - start the intent in here
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
     }
     // ===========================================================
     // Inner and Anonymous Classes
