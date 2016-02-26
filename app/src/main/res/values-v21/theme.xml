@@ -1,0 +1,8 @@
+<resources>
+
+    <!--
+            This style is to create a transparent ActionBar
+     -->
+    <style name="AppTheme" parent="AppTheme.NoActionbar" />
+
+</resources>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTransparentWhite"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:background="@drawable/photo_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_photo_info_container_padding">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/chartHighest"
+                style="@style/ChartPercentBase.Highest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_highest" />
+
+            <TextView
+                android:id="@+id/chartCharacter"
+                style="@style/PhotoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chartHighest"
+                android:text="@string/chart_character" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/dim_photo_info_separator_width"
+            android:layout_height="@dimen/dim_photo_info_separator_height"
+            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
+            android:background="@color/colorTransparentWhite" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/chartMid"
+                style="@style/ChartPercentBase.Mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_mid" />
+
+            <TextView
+                android:id="@+id/chartFamilyBackground"
+                style="@style/PhotoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chartMid"
+                android:text="@string/chart_family_background" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/dim_photo_info_separator_width"
+            android:layout_height="@dimen/dim_photo_info_separator_height"
+            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
+            android:background="@color/colorTransparentWhite" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/chartLow"
+                style="@style/ChartPercentBase.Low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chart_low" />
+
+            <TextView
+                android:id="@+id/chartArtisticPassion"
+                style="@style/PhotoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chartLow"
+                android:text="@string/chart_artistic_passion" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70" />
+
+</LinearLayout>

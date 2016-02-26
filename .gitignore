@@ -43,5 +43,5 @@ captures/
 gen-external-apklibs
 
 .idea/
-
+.idea/**
 **/*.iml
