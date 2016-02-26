@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/luffy" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_photo_info_container_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/photo_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_photo_info_container_padding">
+
+        <TextView
+            android:id="@+id/age"
+            style="@style/PhotoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/photo_user_info_age" />
+
+        <View
+            android:layout_width="@dimen/dim_photo_info_separator_width"
+            android:layout_height="@dimen/dim_photo_info_separator_height"
+            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
+            android:background="@color/colorTransparentWhite" />
+
+        <TextView
+            android:id="@+id/height"
+            style="@style/PhotoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/photo_user_info_height" />
+
+        <View
+            android:layout_width="@dimen/dim_photo_info_separator_width"
+            android:layout_height="@dimen/dim_photo_info_separator_height"
+            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
+            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
+            android:background="@color/colorTransparentWhite" />
+
+        <TextView
+            android:id="@+id/race"
+            style="@style/PhotoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/photo_user_info_race" />
+
+    </LinearLayout>
+
+</RelativeLayout>
