@@ -38,7 +38,11 @@ public class ChartView extends LinearLayout {
     // ===========================================================
     // Fields
     // ===========================================================
+    private ArrayList<BarEntry> yValues;
     private BarChart barChart;
+    private View highestContainer;
+    private View midContainer;
+    private View lowContainer;
     private TextView chartHighest;
     private TextView chartMid;
     private TextView chartLow;
@@ -72,6 +76,9 @@ public class ChartView extends LinearLayout {
         super.onFinishInflate();
 
         barChart = ButterKnife.findById(this, R.id.bar_chart);
+        highestContainer = ButterKnife.findById(this, R.id.highestContainer);
+        midContainer = ButterKnife.findById(this, R.id.midContainer);
+        lowContainer = ButterKnife.findById(this, R.id.lowContainer);
         chartHighest = ButterKnife.findById(this, R.id.chartHighest);
         chartMid = ButterKnife.findById(this, R.id.chartMid);
         chartLow = ButterKnife.findById(this, R.id.chartLow);
@@ -104,7 +111,7 @@ public class ChartView extends LinearLayout {
 
     private void setBarChartData() {
 
-        final ArrayList<BarEntry> yValues = ChartGenerator.INSTANCE.getChartYValues();
+        yValues = ChartGenerator.INSTANCE.getChartYValues();
 
         final ArrayList<String> xValues = ChartGenerator.INSTANCE.getChartXValues();
 
@@ -143,21 +150,26 @@ public class ChartView extends LinearLayout {
             }
         }
 
-        barChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
-            @Override
-            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-                final String text = "Value: " + e.getVal() + " Index: " + e.getXIndex();
-                Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
-                // TODO - start the intent in here
-            }
+        barChart.setOnClickListener(onClickListener);
 
-            @Override
-            public void onNothingSelected() {
-
-            }
-        });
     }
     // ===========================================================
     // Inner and Anonymous Classes
     // ===========================================================
+    private OnClickListener onClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // TODO - start the intent in here
+            if (v == barChart) {
+                final String text = "Value: " + yValues.get(0).getVal();
+                Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
+            } else if (v == highestContainer) {
+
+            } else if (v == midContainer) {
+
+            } else if (v == lowContainer) {
+
+            }
+        }
+    };
 }

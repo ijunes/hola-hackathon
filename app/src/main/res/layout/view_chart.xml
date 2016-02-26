@@ -11,11 +11,14 @@
         android:layout_weight="60"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/dim_photo_info_container_padding">
+        android:paddingTop="@dimen/dim_photo_info_container_padding">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:id="@+id/highestContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/chartHighest"
@@ -36,15 +39,14 @@
         <View
             android:layout_width="@dimen/dim_photo_info_separator_width"
             android:layout_height="@dimen/dim_photo_info_separator_height"
-            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
             android:background="@color/colorTransparentWhite" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:id="@+id/midContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/chartMid"
@@ -65,15 +67,14 @@
         <View
             android:layout_width="@dimen/dim_photo_info_separator_width"
             android:layout_height="@dimen/dim_photo_info_separator_height"
-            android:layout_marginEnd="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
-            android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
             android:background="@color/colorTransparentWhite" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:id="@+id/lowContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/chartLow"
