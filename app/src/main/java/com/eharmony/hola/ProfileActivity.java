@@ -18,11 +18,17 @@ import com.eftimoff.androidplayer.actions.property.PropertyAction;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    private FadingActionBarHelper mFadingActionBarHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        mFadingActionBarHelper = new FadingActionBarHelper(getActionBar(),
+                getResources().getDrawable(R.drawable.actionbar_bg));
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Justin");
         //Set after its been updated
