@@ -24,7 +24,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Justin");
+        //Set after its been updated
         setSupportActionBar(toolbar);
+
 
         final View.OnClickListener fabListener = new View.OnClickListener() {
             @Override
