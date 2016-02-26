@@ -8,13 +8,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eharmony.hola.R;
+import com.eharmony.hola.views.QuestionViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by ijunes on 2/25/2016.
  */
-public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ScoreViewAdapter extends RecyclerView.Adapter<QuestionViewHolder> {
 
     List<Object> contents;
 
@@ -41,14 +43,14 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public QuestionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = null;
 
         switch (viewType) {
             case TYPE_HEADER: {
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.card_item_large, parent, false);
-                return new RecyclerView.ViewHolder(view) {
+                return new QuestionViewHolder(view) {
                 };
 
 
@@ -57,24 +59,27 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.card_item_small, parent, false);
                 TextView tv = (TextView) view.findViewById(R.id.questionText);
-                tv.setText("question1");
 
 
-                return new RecyclerView.ViewHolder(view) {
+                return new QuestionViewHolder(view) {
+
                 };
             }
         }
         return null;
     }
 
-
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(QuestionViewHolder holder, int position) {
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
                 break;
             case TYPE_CELL:
+                holder.questionTextView.setText(String.valueOf(contents.get(position)));
                 break;
         }
     }
+
+
+
 }
