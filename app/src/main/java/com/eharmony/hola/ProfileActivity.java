@@ -25,13 +25,12 @@ public class ProfileActivity extends AppCompatActivity {
     // ===========================================================
     // Constructors
     // ===========================================================
-
     // ===========================================================
     // Getter & Setter
     // ===========================================================
 
     // ===========================================================
-    // Methods for/from SuperClass/Interfaces
+    // Methods for/from Supeactivity_mains
     // ===========================================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {

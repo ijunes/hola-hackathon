@@ -1,5 +1,6 @@
 package com.eharmony.hola;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -106,6 +107,13 @@ public class ScoreActivity extends AppCompatActivity {
 
         viewPager.getViewPager().setOffscreenPageLimit(viewPager.getViewPager().getAdapter().getCount());
         viewPager.getPagerTitleStrip().setViewPager(viewPager.getViewPager());
+        final View.OnClickListener fabListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(ScoreActivity.this, CommunicationActivity.class);
+                ScoreActivity.this.startActivity(intent);
+            }
+        };
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
