@@ -43,6 +43,11 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
 
+        String[] questions = getResources().getStringArray(R.array.character);
+
+        for(int i=0; i<questions.length-1; i++){
+            mContentItems.add(questions[i]);
+        }
         mAdapter = new RecyclerViewMaterialAdapter(new ScoreViewAdapter(mContentItems));
         mRecyclerView.setAdapter(mAdapter);
 

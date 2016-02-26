@@ -30,6 +30,9 @@ public class ProgressHelper {
                         if(currentProgress == 100){
                             startIndeterminate();
                         }
+                        else if(currentProgress > 110){
+                            button.onProgressCompleted();
+                        }
                     }
                 });
             }
@@ -50,6 +53,9 @@ public class ProgressHelper {
     }
 
     public void incrementCount(){
+        if(currentProgress == 0){
+            startDeterminate();
+        }
         getRunnable(activity, 20).run();
     }
 
