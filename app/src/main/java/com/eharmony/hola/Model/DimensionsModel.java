@@ -4,8 +4,10 @@ package com.eharmony.hola.Model;
  * Created by hrastogi on 2/26/16.
  */
 public class DimensionsModel {
-   int id;
-    String questionDescription;
+    private int id;
+    private String dimensionDescription;
+    private int percentage;
+    private String dimensionTitle;
 
     public int getId() {
         return id;
@@ -15,16 +17,30 @@ public class DimensionsModel {
         this.id = id;
     }
 
-    public String getQuestionDescription() {
-        return questionDescription;
+    public String getPercentage(){
+        return new StringBuilder().append(String.valueOf(percentage)).append("%").toString();
     }
 
-    public void setQuestionDescription(String questionDescription) {
-        this.questionDescription = questionDescription;
+    public String getDimensionTitle(){
+        return this.dimensionTitle;
     }
 
-    public DimensionsModel(int id, String questionDescription) {
+
+    public void setTitle(String title){
+        this.dimensionTitle = title;
+    }
+
+    public String getDimensionDescription(){
+        return this.dimensionDescription;
+    }
+    public void setDimensionDescription(String dimensionDescription) {
+        this.dimensionDescription = dimensionDescription;
+    }
+
+    public DimensionsModel(int id, int percentage, String dimensionTitle, String dimensionDescription) {
         this.id = id;
-        this.questionDescription = questionDescription;
+        this.percentage = percentage;
+        this.dimensionTitle = dimensionTitle;
+        this.dimensionDescription = dimensionDescription;
     }
 }
