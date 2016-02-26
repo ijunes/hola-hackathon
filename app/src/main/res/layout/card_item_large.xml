@@ -17,7 +17,7 @@ android:layout_height="wrap_content">
     app:cardElevation="2dp"
     app:cardPreventCornerOverlap="false"
     app:contentPadding="15dp"
-    android:layout_margin="30dp">
+    android:layout_margin="20dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
