@@ -58,7 +58,7 @@ android:layout_height="wrap_content">
             android:layout_alignParentStart="false"
             android:layout_below="@+id/dimensionTextView"
             android:paddingTop="10dp"
-            />
+            android:textColor="#999999" />
 
 
     </RelativeLayout>

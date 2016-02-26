@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-        android:id="@+id/score_app_bar">
+        android:id="@+id/score_app_bar"
+        android:background="#dedede">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -41,7 +42,7 @@
         app:viewpager_animatedHeaderImage="true"
         app:viewpager_disableToolbar="false"
 
-        android:background="#cccccc" />
+        android:background="#dedede" />
 
     <view
         android:clickable="true"
