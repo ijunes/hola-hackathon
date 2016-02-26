@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.eharmony.hola.R;
 
@@ -49,10 +50,16 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         .inflate(R.layout.card_item_large, parent, false);
                 return new RecyclerView.ViewHolder(view) {
                 };
+
+
             }
             case TYPE_CELL: {
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.card_item_small, parent, false);
+                TextView tv = (TextView) view.findViewById(R.id.questionText);
+                tv.setText("question1");
+
+
                 return new RecyclerView.ViewHolder(view) {
                 };
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
@@ -8,7 +8,7 @@ android:layout_height="wrap_content">
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="200dp"
     android:layout_marginBottom="@dimen/cardMarginVertical"
     android:layout_marginLeft="@dimen/cardMarginHorizontal"
     android:layout_marginRight="@dimen/cardMarginHorizontal"
@@ -16,8 +16,54 @@ android:layout_height="wrap_content">
     app:cardCornerRadius="2dp"
     app:cardElevation="2dp"
     app:cardPreventCornerOverlap="false"
-    app:contentPadding="0dp">
+    app:contentPadding="15dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="90dp"
+            android:id="@+id/percentageText"
+            android:layout_gravity="left|center_vertical"
+            android:text="98%"
+            android:textColor="#8fb43e"
+            android:layout_alignParentTop="true"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Character"
+            android:id="@+id/dimensionTextView"
+            android:layout_below="@+id/percentageText"
+            android:textColor="#4a4a4a"
+            android:singleLine="false"
+            android:textSize="40sp"
+            android:layout_alignParentBottom="false"
+            android:paddingTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text="New Text"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/dimensionTextView"
+            android:paddingTop="10dp"
+            />
+
+
+    </RelativeLayout>
+
+
 
 </android.support.v7.widget.CardView>
 
-</RelativeLayout>
+</FrameLayout>
