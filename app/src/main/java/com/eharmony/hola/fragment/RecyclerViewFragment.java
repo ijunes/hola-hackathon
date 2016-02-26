@@ -22,7 +22,7 @@ public class RecyclerViewFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
 
-    private static final int ITEM_COUNT = 1;
+    private static final int ITEM_COUNT = 10;
 
     private List<Object> mContentItems = new ArrayList<>();
 
@@ -43,6 +43,11 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
 
+        String[] questions = getResources().getStringArray(R.array.character);
+
+        for(int i=0; i<questions.length-1; i++){
+            mContentItems.add(questions[i]);
+        }
         mAdapter = new RecyclerViewMaterialAdapter(new ScoreViewAdapter(mContentItems));
         mRecyclerView.setAdapter(mAdapter);
 

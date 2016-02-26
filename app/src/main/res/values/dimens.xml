@@ -44,4 +44,6 @@
     <dimen name="dim_match_detail_section_two_text_width">100dp</dimen>
     <dimen name="dim_match_detail_section_two_text_margin_left">16dp</dimen>
 
+    <dimen name="padding_card">16dp</dimen>
+
 </resources>

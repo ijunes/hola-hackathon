@@ -16,7 +16,8 @@
 bin/
 gen/
 out/
-
+**/.DS_Store
+.DS_Store
 # Gradle files
 .gradle/
 build/
@@ -41,7 +42,9 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
-
+app/app.iml
 .idea/
-
+.idea
+.idea/workspace.xml
+.idea/**
 **/*.iml
