@@ -8,7 +8,7 @@ android:layout_height="500dp">
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="400dp"
     android:layout_marginBottom="@dimen/cardMarginVertical"
     android:layout_marginLeft="@dimen/cardMarginHorizontal"
     android:layout_marginRight="@dimen/cardMarginHorizontal"
@@ -26,13 +26,24 @@ android:layout_height="500dp">
         <TextView
             android:layout_width="100dp"
             android:layout_height="200dp"
-            android:id="@+id/editText"
+            android:id="@+id/percentageText"
             android:layout_gravity="left|center_vertical"
-            android:text="Hello"
+            android:text="98%"
             android:textColor="#efe2e2"
             android:layout_alignParentTop="true"
             android:textSize="40sp"
             android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="Character"
+            android:id="@+id/dimensionTextView"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/percentageText"
+            android:textColor="#fefefe"
+            android:singleLine="false" />
+
 
     </RelativeLayout>
 
