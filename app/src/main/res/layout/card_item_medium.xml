@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Guide me"
-            android:id="@+id/guideMeView"
+            android:id="@+id/guideme_textview"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_gravity="left|top"
@@ -39,13 +39,12 @@
             android:layout_height="200dp"
             android:text="We have some suggestions to help you to start a conversation.Select 5 to send to the match."
             android:id="@+id/dimensionTextView"
-            android:layout_below="@+id/guideMeView"
+            android:layout_below="@+id/guideme_textview"
             android:textColor="#999999"
             android:singleLine="false"
             android:textSize="15sp"
             android:layout_alignParentBottom="false"
             android:paddingTop="10dp" />
-
 
 
 

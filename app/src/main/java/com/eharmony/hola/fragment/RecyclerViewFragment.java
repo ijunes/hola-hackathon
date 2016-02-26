@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eharmony.hola.Model.DimensionsModel;
+import com.eharmony.hola.Model.GuideModel;
+import com.eharmony.hola.Model.QuestionModel;
 import com.eharmony.hola.R;
 import com.eharmony.hola.adapter.ScoreViewAdapter;
 import com.github.florent37.materialviewpager.MaterialViewPagerHelper;
@@ -44,16 +47,19 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         String[] questions = getResources().getStringArray(R.array.character);
-
+        DimensionsModel model = new DimensionsModel(0, 98, "Character", "Character dimension description");
+        mContentItems.add(model);
+        GuideModel guideModel = new GuideModel("Guide Me!", "Tips!");
+        mContentItems.add(guideModel);
         for(int i=0; i<questions.length-1; i++){
-            mContentItems.add(questions[i]);
+            mContentItems.add(new QuestionModel(i, questions[i]));
         }
         mAdapter = new RecyclerViewMaterialAdapter(new ScoreViewAdapter(mContentItems));
         mRecyclerView.setAdapter(mAdapter);
 
         {
             for (int i = 0; i < ITEM_COUNT; ++i)
-                mContentItems.add(new Object());
+                mContentItems.add(new QuestionModel(i, questions[i]));
             mAdapter.notifyDataSetChanged();
         }
 
