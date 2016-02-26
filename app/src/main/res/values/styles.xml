@@ -34,4 +34,14 @@
         <item name="android:textColor">@color/colorGreyTwo</item>
     </style>
 
+    <style name="MatchDetailTextDetail">
+        <item name="android:textColor">@color/colorMatchDetail</item>
+        <item name="android:textSize">@dimen/dim_match_detail_text_detail_size</item>
+    </style>
+
+    <style name="MatchDetailTextField">
+        <item name="android:textColor">@color/colorGreyTwo</item>
+        <item name="android:textSize">@dimen/dim_match_detail_text_size</item>
+    </style>
+
 </resources>

@@ -34,5 +34,16 @@
     <dimen name="dim_chart_percent_size">26sp</dimen>
     <dimen name="dim_chart_dimension_size">14sp</dimen>
 
+    <dimen name="dim_match_detail_field_margin">2dp</dimen>
+    <dimen name="dim_match_detail_section_margin">6dp</dimen>
+    <dimen name="dim_match_detail_text_detail_size">16sp</dimen>
+    <dimen name="dim_match_detail_text_size">13sp</dimen>
+    <dimen name="dim_match_detail_section_container_margin">28dp</dimen>
+    <dimen name="dim_match_detail_section_container_margin_left">14dp</dimen>
+    <dimen name="dim_match_detail_icon_size">56dp</dimen>
+    <dimen name="dim_match_detail_section_two_text_width">100dp</dimen>
+    <dimen name="dim_match_detail_section_two_text_margin_left">16dp</dimen>
+
     <dimen name="padding_card">16dp</dimen>
+
 </resources>

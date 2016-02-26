@@ -20,5 +20,6 @@
     <color name="colorBlackO">#FF000000</color>
     <color name="colorGreyTwo">#999999</color>
     <color name="colorBlueOneTransparent">#1A328AA1</color>
+    <color name="colorMatchDetail">#4D4D4E</color>
 
 </resources>

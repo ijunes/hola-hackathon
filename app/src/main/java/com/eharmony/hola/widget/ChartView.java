@@ -9,9 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.eharmony.hola.Model.ChartModel;
 import com.eharmony.hola.R;
+import com.eharmony.hola.event.ChartClickEvent;
 import com.eharmony.hola.util.ChartGenerator;
 import com.eharmony.hola.util.Constants;
+import com.eharmony.hola.util.EventBus;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -104,7 +107,7 @@ public class ChartView extends LinearLayout {
 
         setBarChartData();
         // add a nice and smooth animation
-        barChart.animateY(2500);
+        barChart.animateXY(2500, 2500);
 
         barChart.getLegend().setEnabled(false);
     }
@@ -150,6 +153,9 @@ public class ChartView extends LinearLayout {
             }
         }
 
+        highestContainer.setOnClickListener(onClickListener);
+        midContainer.setOnClickListener(onClickListener);
+        lowContainer.setOnClickListener(onClickListener);
         barChart.setOnClickListener(onClickListener);
 
     }
@@ -159,17 +165,22 @@ public class ChartView extends LinearLayout {
     private OnClickListener onClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            // TODO - start the intent in here
+            ChartModel chartModel = null;
+            int index;
             if (v == barChart) {
-                final String text = "Value: " + yValues.get(0).getVal();
-                Toast.makeText(getContext(), text, Toast.LENGTH_LONG).show();
+                index = 0;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
             } else if (v == highestContainer) {
-
+                index = 0;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
             } else if (v == midContainer) {
-
+                index = 1;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
             } else if (v == lowContainer) {
-
+                index = 2;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
             }
+            EventBus.INSTANCE.getBus().post(new ChartClickEvent(chartModel));
         }
     };
 }
