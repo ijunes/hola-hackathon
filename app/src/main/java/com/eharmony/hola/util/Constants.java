@@ -5,4 +5,5 @@ package com.eharmony.hola.util;
  */
 public class Constants {
     public static final int DIMENSIONS_COUNT = 29;
+    public static final String CHART_BUNDLE = "chartBundle";
 }
