@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
+import com.achep.header2actionbar.FadingActionBarHelper;
 import com.eftimoff.androidplayer.Player;
 import com.eftimoff.androidplayer.actions.property.PropertyAction;
 
@@ -26,8 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        mFadingActionBarHelper = new FadingActionBarHelper(getActionBar(),
-                getResources().getDrawable(R.drawable.actionbar_bg));
+//        mFadingActionBarHelper = new FadingActionBarHelper(getActionBar(),
+//                getResources().getDrawable(R.drawable.actionbar_bg, null));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Justin");
