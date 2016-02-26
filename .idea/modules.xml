@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hola.iml" filepath="$PROJECT_DIR$/Hola.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hack-hola.iml" filepath="$PROJECT_DIR$/hack-hola.iml" />
     </modules>
   </component>
 </project>
