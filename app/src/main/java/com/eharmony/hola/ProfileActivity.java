@@ -1,6 +1,7 @@
 package com.eharmony.hola;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,10 @@ public class ProfileActivity extends AppCompatActivity {
         toolbar = ButterKnife.findById(this, R.id.toolbar);
         setupToolbarInfo();
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setBackgroundColor(Color.argb(192, 255, 255, 255));
 
         addFragment();
     }

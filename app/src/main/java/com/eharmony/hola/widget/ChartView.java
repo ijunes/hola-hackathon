@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
 import com.eharmony.hola.R;
+import com.eharmony.hola.util.ChartGenerator;
+import com.eharmony.hola.util.Constants;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -16,7 +18,6 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import butterknife.ButterKnife;
 
@@ -27,40 +28,7 @@ public class ChartView extends LinearLayout {
     // ===========================================================
     // Constants
     // ===========================================================
-    private static final int MAX_VISIBLE_VALUE_COUNT = 30;
 
-    public static final int[] CHART_COLORS = {
-            Color.BLUE,
-            Color.RED,
-            Color.CYAN,
-            Color.GREEN,
-            Color.LTGRAY,
-            Color.YELLOW,
-            Color.CYAN,
-            Color.MAGENTA,
-            Color.GRAY,
-            Color.BLACK,
-            Color.BLUE,
-            Color.RED,
-            Color.CYAN,
-            Color.GREEN,
-            Color.LTGRAY,
-            Color.YELLOW,
-            Color.CYAN,
-            Color.MAGENTA,
-            Color.GRAY,
-            Color.BLACK,
-            Color.BLUE,
-            Color.RED,
-            Color.CYAN,
-            Color.GREEN,
-            Color.LTGRAY,
-            Color.YELLOW,
-            Color.CYAN,
-            Color.MAGENTA,
-            Color.GRAY,
-            Color.BLACK
-    };
     // ===========================================================
     // Fields
     // ===========================================================
@@ -103,7 +71,7 @@ public class ChartView extends LinearLayout {
     // ===========================================================
     private void init() {
         barChart.setDescription("");
-        barChart.setMaxVisibleValueCount(ChartView.MAX_VISIBLE_VALUE_COUNT);
+        barChart.setMaxVisibleValueCount(Constants.DIMENSIONS_COUNT);
         barChart.setPinchZoom(false);
         barChart.setDrawBarShadow(false);
         barChart.setDrawGridBackground(false);
@@ -123,32 +91,19 @@ public class ChartView extends LinearLayout {
     }
 
     private void setBarChartData() {
-        final ArrayList<BarEntry> yVals1 = new ArrayList<>();
 
-        final Random random = new Random();
+        final ArrayList<BarEntry> yValues = ChartGenerator.INSTANCE.getChartYValues();
 
-        final int size = 30;
+        final ArrayList<String> xValues = ChartGenerator.INSTANCE.getChartXValues();
 
-        for (int i = 0; i < size; i++) {
-            float mult = random.nextInt(30) + 1;
-            float val1 = (float) (Math.random() * mult) + mult / 3;
-            yVals1.add(new BarEntry((int) val1, i));
-        }
-
-        final ArrayList<String> xVals = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            xVals.add((int) yVals1.get(i).getVal() + "");
-        }
-
-        final BarDataSet set1 = new BarDataSet(yVals1, "Data Set");
-        set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
-//        set1.setColors(CHART_COLORS);
+        final BarDataSet set1 = new BarDataSet(yValues, "Data Set");
+        set1.setColors(ChartGenerator.INSTANCE.getColors());
         set1.setDrawValues(false);
 
         final ArrayList<IBarDataSet> dataSets = new ArrayList<>();
         dataSets.add(set1);
 
-        final BarData data = new BarData(xVals, dataSets);
+        final BarData data = new BarData(xValues, dataSets);
 
         barChart.setData(data);
         barChart.invalidate();

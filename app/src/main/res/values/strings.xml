@@ -108,4 +108,12 @@
     <string name="menu_hide">Hide</string>
 
     <string name="title_activity_communication">CommunicationActivity</string>
+    
+    <string name="chart_highest">98%</string>
+    <string name="chart_character">Character</string>
+    <string name="chart_mid">96%</string>
+    <string name="chart_family_background">Family Background</string>
+    <string name="chart_low">85%</string>
+    <string name="chart_artistic_passion">Artistic Passion</string>
+
 </resources>

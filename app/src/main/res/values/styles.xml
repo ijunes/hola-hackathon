@@ -11,4 +11,22 @@
         <item name="android:textSize">@dimen/dim_floating_text_size</item>
     </style>
 
+
+    <style name="ChartPercentBase">
+        <item name="android:textSize">@dimen/dim_chart_percent_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ChartPercentBase.Highest">
+        <item name="android:textColor">@color/colorGreen</item>
+    </style>
+
+    <style name="ChartPercentBase.Mid">
+        <item name="android:textColor">@color/colorBlueOne</item>
+    </style>
+
+    <style name="ChartPercentBase.Low">
+        <item name="android:textColor">@color/colorBlueTwo</item>
+    </style>
+
 </resources>

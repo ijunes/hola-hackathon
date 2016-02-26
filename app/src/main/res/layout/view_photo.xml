@@ -18,7 +18,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/colorTransparentWhite"
+        android:background="@drawable/photo_gradient"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/dim_photo_info_container_padding">
@@ -37,7 +37,7 @@
             android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
             android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
             android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
-            android:background="@color/colorTransparentBlack" />
+            android:background="@color/colorTransparentWhite" />
 
         <TextView
             android:id="@+id/height"
@@ -53,7 +53,7 @@
             android:layout_marginLeft="@dimen/dim_photo_info_Separator_margin"
             android:layout_marginRight="@dimen/dim_photo_info_Separator_margin"
             android:layout_marginStart="@dimen/dim_photo_info_Separator_margin"
-            android:background="@color/colorTransparentBlack" />
+            android:background="@color/colorTransparentWhite" />
 
         <TextView
             android:id="@+id/race"
