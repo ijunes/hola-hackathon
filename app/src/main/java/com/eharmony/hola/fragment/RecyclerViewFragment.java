@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.eharmony.hola.R;
-import com.eharmony.hola.adapter.ScorePagerAdapter;
+import com.eharmony.hola.adapter.ScoreViewAdapter;
 import com.github.florent37.materialviewpager.MaterialViewPagerHelper;
 import com.github.florent37.materialviewpager.adapter.RecyclerViewMaterialAdapter;
 
@@ -43,7 +43,7 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
 
-        mAdapter = new RecyclerViewMaterialAdapter(new ScorePagerAdapter(mContentItems));
+        mAdapter = new RecyclerViewMaterialAdapter(new ScoreViewAdapter(mContentItems));
         mRecyclerView.setAdapter(mAdapter);
 
         {

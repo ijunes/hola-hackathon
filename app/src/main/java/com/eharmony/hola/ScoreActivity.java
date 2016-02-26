@@ -34,6 +34,7 @@ public class ScoreActivity extends AppCompatActivity {
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayShowTitleEnabled(true);
             actionBar.setDisplayUseLogoEnabled(false);
+
             actionBar.setHomeButtonEnabled(true);
         }
 

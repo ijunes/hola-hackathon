@@ -13,14 +13,14 @@ import java.util.List;
 /**
  * Created by ijunes on 2/25/2016.
  */
-public class ScorePagerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ScoreViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     List<Object> contents;
 
     static final int TYPE_HEADER = 0;
     static final int TYPE_CELL = 1;
 
-    public ScorePagerAdapter(List<Object> contents) {
+    public ScoreViewAdapter(List<Object> contents) {
         this.contents = contents;
     }
 
