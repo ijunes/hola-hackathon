@@ -27,9 +27,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eharmony.hola.ProfileActivity" />
         </activity>
-        <activity
-            android:name=".CommunicationActivity"
-            android:label="@string/title_activity_communication"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.eharmony.hola;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,25 +11,29 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 
+import com.eharmony.hola.event.QuestionRemovedEvent;
+import com.eharmony.hola.event.QuestionSelectedEvent;
 import com.eharmony.hola.fragment.RecyclerViewFragment;
+import com.eharmony.hola.util.EventBus;
 import com.eharmony.hola.widgets.ProgressHelper;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
+import com.squareup.otto.Subscribe;
 
 import mbanje.kurt.fabbutton.FabButton;
 
 public class ScoreActivity extends AppCompatActivity {
-
+    private ProgressHelper helper;
     private MaterialViewPager viewPager;
-
+    private AdapterView.OnItemSelectedListener questionListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
         viewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
-
         Toolbar toolbar = viewPager.getToolbar();
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -67,13 +72,13 @@ public class ScoreActivity extends AppCompatActivity {
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "Overall";
+                        return "Character";
                     case 1:
-                        return "Charisma";
+                        return "Sociability";
                     case 2:
-                        return "Professional";
+                        return "Ambition ";
                     case 3:
-                        return "Politics";
+                        return "Curiosity";
                 }
                 return "";
             }
@@ -82,28 +87,13 @@ public class ScoreActivity extends AppCompatActivity {
         viewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
             public HeaderDesign getHeaderDesign(int page) {
-                switch (page) {
-                    case 0:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.blue,
-                                "http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2014/06/wallpaper_51.jpg");
-                    case 1:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.green,
-                                "https://fs01.androidpit.info/a/63/0e/android-l-wallpapers-630ea6-h900.jpg");
-                    case 2:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.cyan,
-                                "http://www.droid-life.com/wp-content/uploads/2014/10/lollipop-wallpapers10.jpg");
-                    case 3:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.red,
-                                "http://www.tothemobile.com/wp-content/uploads/2014/07/original.jpg");
-                }
 
-                //execute others actions if needed (ex : modify your header logo)
 
-                return null;
+
+                ColorDrawable colorDrawable = new ColorDrawable(0x328AA1);
+                return HeaderDesign.fromColorResAndDrawable(R.color.colorBlueOne,colorDrawable );
+
+
             }
         });
 
@@ -113,39 +103,33 @@ public class ScoreActivity extends AppCompatActivity {
         final View.OnClickListener fabListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Intent intent = new Intent(ScoreActivity.this, CommunicationActivity.class);
-                ScoreActivity.this.startActivity(intent);
+
             }
         };
 
         final FabButton button = (FabButton)  findViewById(R.id.determinate);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final ProgressHelper helper = new ProgressHelper(button,this);
+         helper = new ProgressHelper(button,this);
 
         button.setOnClickListener(new View.OnClickListener() {
             int count = 0;
             @Override
             public void onClick(View v) {
-                if(count == 0) {
-                    helper.startDeterminate();
-                }
-                if (count%10 < 5){
-                    helper.incrementCount();
-                }
-                else{
-                    helper.decrementCount();
-                }
+                EventBus.INSTANCE.getBus().post(new QuestionSelectedEvent(1));
                 count++;
             }
         });
     }
 
+    @Subscribe
+    public void questionSelected(QuestionSelectedEvent event) {
+        helper.incrementCount();
+    }
+
+    @Subscribe
+    public void questionRemoved(QuestionRemovedEvent event) {
+        helper.decrementCount();
+    }
 }
