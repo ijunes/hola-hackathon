@@ -8,7 +8,7 @@ android:layout_height="wrap_content">
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="300dp"
     android:layout_marginBottom="@dimen/cardMarginVertical"
     android:layout_marginLeft="@dimen/cardMarginHorizontal"
     android:layout_marginRight="@dimen/cardMarginHorizontal"
@@ -16,7 +16,8 @@ android:layout_height="wrap_content">
     app:cardCornerRadius="2dp"
     app:cardElevation="2dp"
     app:cardPreventCornerOverlap="false"
-    app:contentPadding="15dp">
+    app:contentPadding="15dp"
+    android:layout_margin="20dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,11 +35,11 @@ android:layout_height="wrap_content">
             android:textSize="60sp"
             android:textStyle="bold"
             android:paddingTop="20dp"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="0dp"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:text="Character"
             android:id="@+id/dimensionTextView"
             android:layout_below="@+id/percentageText"
@@ -46,12 +47,12 @@ android:layout_height="wrap_content">
             android:singleLine="false"
             android:textSize="40sp"
             android:layout_alignParentBottom="false"
-            android:paddingTop="10dp" />
+            android:paddingTop="0dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:text="New Text"
+            android:text="No marriage will ever try if one of the partner is not of the good character.Character as used here, relates to one's integrity"
             android:id="@+id/textView"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="false"

@@ -4,15 +4,27 @@ package com.eharmony.hola.Model;
  * Created by hrastogi on 2/26/16.
  */
 public class QuestionModel {
+    int questionId;
+    String questionDescription;
 
-    private int id;
-    private String question;
-
-    public String getQuestion() {
-        return question;
+    public QuestionModel(int questionId, String questionDescription) {
+        this.questionId = questionId;
+        this.questionDescription = questionDescription;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public int getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(int questionId) {
+        this.questionId = questionId;
+    }
+
+    public String getQuestionDescription() {
+        return questionDescription;
+    }
+
+    public void setQuestionDescription(String questionDescription) {
+        this.questionDescription = questionDescription;
     }
 }

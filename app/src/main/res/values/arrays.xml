@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="character" id="@+id/character">
-        <item>"Why?"</item>
-        <item>"Who?"</item>
-        <item>"Where?"</item>
-        <item>"Why?"</item>
-        <item>"Who?"</item>
-        <item>"Where?"</item>
+        <item>"Why do you do the things you do?"</item>
+        <item>"Who do you do them for?"</item>
+        <item>"Where did you do those things?"</item>
+        <item>"Why do you do such things??"</item>
+        <item>"Who do you think you are?"</item>
+        <item>"Where do you want me?"</item>
         <item>"Why?"</item>
         <item>"Who?"</item>
         <item>"Where?"</item>
