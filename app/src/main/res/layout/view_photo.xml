@@ -10,7 +10,7 @@
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/luffy" />
+        android:src="@drawable/profile_justin" />
 
     <LinearLayout
         android:layout_width="match_parent"

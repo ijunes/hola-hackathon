@@ -7,8 +7,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.ImageButton;
 
 import com.eharmony.hola.R;
+import com.eharmony.hola.util.Anims;
+import com.eharmony.hola.util.EventBus;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by lgarcia on 2/26/16.
@@ -22,6 +28,8 @@ public class ProfileFragment extends Fragment {
     // Fields
     // ===========================================================
     private View view;
+    private ImageButton plus;
+    private View commView;
     // ===========================================================
     // Constructors
     // ===========================================================
@@ -44,6 +52,12 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        plus = ButterKnife.findById(view, R.id.plus);
+        commView = ButterKnife.findById(view, R.id.comm_view);
+
+        plus.setOnClickListener(onClickListener);
+        commView.setOnClickListener(onClickListener);
+
         return view;
     }
 
@@ -54,4 +68,17 @@ public class ProfileFragment extends Fragment {
     // ===========================================================
     // Inner and Anonymous Classes
     // ===========================================================
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v == plus) {
+                plus.setVisibility(View.GONE);
+                commView.setVisibility(View.VISIBLE);
+            } else if (v == commView) {
+                plus.setVisibility(View.VISIBLE);
+                commView.setVisibility(View.GONE);
+                Anims.INSTANCE.translateDown(plus);
+            }
+        }
+    };
 }

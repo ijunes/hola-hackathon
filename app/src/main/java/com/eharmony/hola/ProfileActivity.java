@@ -12,10 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 
-import com.eharmony.hola.adapter.ScoreViewAdapter;
 import com.eharmony.hola.event.ChartClickEvent;
 import com.eharmony.hola.fragment.ProfileFragment;
-import com.eharmony.hola.fragment.RecyclerViewFragment;
 import com.eharmony.hola.util.Constants;
 import com.eharmony.hola.util.EventBus;
 import com.squareup.otto.Subscribe;
