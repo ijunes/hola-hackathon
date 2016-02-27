@@ -1,15 +1,19 @@
 package com.eharmony.hola.Model;
 
+import android.view.animation.Animation;
+
 /**
  * Created by hrastogi on 2/26/16.
  */
 public class QuestionModel {
     int questionId;
     String questionDescription;
+    Animation animation;
 
-    public QuestionModel(int questionId, String questionDescription) {
+    public QuestionModel(int questionId, String questionDescription, final Animation animation) {
         this.questionId = questionId;
         this.questionDescription = questionDescription;
+        this.animation = animation;
     }
 
     public int getQuestionId() {
@@ -26,5 +30,8 @@ public class QuestionModel {
 
     public void setQuestionDescription(String questionDescription) {
         this.questionDescription = questionDescription;
+    }
+    public Animation getAnimation(){
+        return this.animation;
     }
 }
