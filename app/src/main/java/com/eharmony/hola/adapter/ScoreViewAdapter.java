@@ -10,6 +10,7 @@ import com.eharmony.hola.Model.DimensionsModel;
 import com.eharmony.hola.Model.GuideModel;
 import com.eharmony.hola.Model.QuestionModel;
 import com.eharmony.hola.R;
+import com.eharmony.hola.event.QuestionRemovedEvent;
 import com.eharmony.hola.event.QuestionSelectedEvent;
 import com.eharmony.hola.util.EventBus;
 import com.eharmony.hola.views.DimensionViewHolder;
@@ -95,7 +96,12 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
                 holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        EventBus.INSTANCE.getBus().post(new QuestionSelectedEvent(questionModel.getQuestionId()));
+                        if(isChecked) {
+                            EventBus.INSTANCE.getBus().post(new QuestionSelectedEvent(questionModel.getQuestionId()));
+                        }
+                        else{
+                            EventBus.INSTANCE.getBus().post(new QuestionRemovedEvent(questionModel.getQuestionId()));
+                        }
                     }
                 });
                 break;
