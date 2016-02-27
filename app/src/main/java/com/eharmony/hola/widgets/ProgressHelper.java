@@ -22,7 +22,12 @@ public class ProgressHelper {
         return new Runnable() {
             @Override
             public void run() {
-                currentProgress += delta;
+                if(delta>=0){
+                    currentProgress += delta;
+                }
+                else{
+                    currentProgress -= 20;
+                }
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
