@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -38,6 +39,8 @@ public class ScoreActivity extends AppCompatActivity {
         viewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
         Toolbar toolbar = viewPager.getToolbar();
         if (toolbar != null) {
+            toolbar.setTitle("Justin");
+
             setSupportActionBar(toolbar);
 
             ActionBar actionBar = getSupportActionBar();
@@ -65,7 +68,11 @@ public class ScoreActivity extends AppCompatActivity {
                     //case 2:
                     //    return WebViewFragment.newInstance();
                     default:
-                        return RecyclerViewFragment.newInstance();
+                        RecyclerViewFragment fragment = RecyclerViewFragment.newInstance();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("position", position);
+                        fragment.setArguments(bundle);
+                        return fragment;
                 }
             }
 
@@ -137,5 +144,25 @@ public class ScoreActivity extends AppCompatActivity {
     @Subscribe
     public void questionRemoved(QuestionRemovedEvent event) {
         helper.decrementCount();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            EventBus.INSTANCE.getBus().register(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            EventBus.INSTANCE.getBus().unregister(this);
+        } catch (Exception e) {
+            Log.e(ProfileActivity.class.getName(), e.getMessage(), e);
+        }
     }
 }

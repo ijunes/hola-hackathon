@@ -41,7 +41,6 @@
         app:viewpager_disableToolbar="false"
         android:background="#dedede" />
 
-
     <view
         android:clickable="true"
         android:layout_width="@dimen/button_size"
@@ -53,7 +52,7 @@
         android:id="@+id/determinate"
         android:color="?attr/colorPrimaryDark"
         app:fbb_showShadow="true"
-        android:src="@drawable/ic_fab_play"
+        android:src="@drawable/ic_fab_send"
         android:visibility="visible"
         android:indeterminate="false"
         android:max="100"

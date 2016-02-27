@@ -4,9 +4,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.CompoundButton;
 
+import com.eharmony.hola.Model.DimensionsModel;
+import com.eharmony.hola.Model.GuideModel;
+import com.eharmony.hola.Model.QuestionModel;
 import com.eharmony.hola.R;
+import com.eharmony.hola.event.QuestionRemovedEvent;
+import com.eharmony.hola.event.QuestionSelectedEvent;
+import com.eharmony.hola.util.EventBus;
 import com.eharmony.hola.views.DimensionViewHolder;
 
 import java.util.List;
@@ -74,9 +80,30 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
     public void onBindViewHolder(DimensionViewHolder holder, int position) {
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
+                DimensionsModel dimensionsModel = (DimensionsModel) contents.get(position);
+                holder.percentTextView.setText(dimensionsModel.getPercentage());
+                holder.titleTextView.setText(dimensionsModel.getDimensionTitle());
+                holder.dimensionTextView.setText(dimensionsModel.getDimensionDescription());
+                break;
+            case TYPE_GUIDE_CELL:
+                GuideModel guideModel = (GuideModel) contents.get(position);
+                holder.guidemeTextView.setText(guideModel.getGuideTitle());
+                holder.guidemeDetailsTextView.setText(guideModel.getGuideText());
                 break;
             case TYPE_CELL:
-                holder.questionTextView.setText(String.valueOf(contents.get(position)));
+                final QuestionModel questionModel = (QuestionModel) contents.get(position);
+                holder.questionTextView.setText(questionModel.getQuestionDescription());
+                holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if(isChecked) {
+                            EventBus.INSTANCE.getBus().post(new QuestionSelectedEvent(questionModel.getQuestionId()));
+                        }
+                        else{
+                            EventBus.INSTANCE.getBus().post(new QuestionRemovedEvent(questionModel.getQuestionId()));
+                        }
+                    }
+                });
                 break;
         }
     }

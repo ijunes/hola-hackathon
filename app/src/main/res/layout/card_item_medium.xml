@@ -11,19 +11,18 @@
         android:layout_marginLeft="@dimen/cardMarginHorizontal"
         android:layout_marginRight="@dimen/cardMarginHorizontal"
         android:layout_marginTop="@dimen/cardMarginVertical"
-        android:layout_margin="20dp"
         >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Guide me"
-            android:id="@+id/guideMeView"
+            android:id="@+id/guideme_textview"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_gravity="left|top"
             android:textColor="#328aa1"
-            android:paddingLeft="40dp"/>
+            android:paddingLeft="60dp"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -32,20 +31,21 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="false"
             android:src="@drawable/icon_guide_me"
-            android:layout_marginLeft="0dp" />
+            android:layout_marginLeft="25dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:text="We have some suggestions to help you to start a conversation.Select 5 to send to the match."
-            android:id="@+id/dimensionTextView"
-            android:layout_below="@+id/guideMeView"
+            android:id="@+id/guideme_detail_textview"
+            android:layout_below="@+id/guideme_textview"
             android:textColor="#999999"
             android:singleLine="false"
             android:textSize="15sp"
             android:layout_alignParentBottom="false"
-            android:paddingTop="10dp" />
-
+            android:paddingTop="10dp"
+            android:layout_marginLeft="35dp"
+            />
 
 
 

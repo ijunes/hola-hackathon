@@ -2,6 +2,7 @@ package com.eharmony.hola.views;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.eharmony.hola.R;
@@ -11,7 +12,18 @@ import com.eharmony.hola.R;
  */
 public class DimensionViewHolder extends RecyclerView.ViewHolder {
 
+    public TextView percentTextView;
+    public TextView titleTextView;
+    public TextView dimensionTextView;
+
+    public TextView guidemeTextView;
+    public TextView guidemeDetailsTextView;
+
     public TextView questionTextView;
+    public CheckBox checkbox;
+
+
+
     static final int TYPE_HEADER = 0;
     static final int TYPE_GUIDE_CELL = 1;
     static final int TYPE_CELL = 2;
@@ -19,26 +31,21 @@ public class DimensionViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         if(viewType == TYPE_HEADER){
-
+            percentTextView = (TextView) itemView.findViewById(R.id.dimension_percentage_textview);
+            titleTextView = (TextView) itemView.findViewById(R.id.dimension_title_textview);
+            dimensionTextView = (TextView) itemView.findViewById(R.id.dimension_desc_textview);
         }
 
         if(viewType == TYPE_GUIDE_CELL){
-
+            guidemeTextView = (TextView) itemView.findViewById(R.id.guideme_textview);
+            guidemeDetailsTextView = (TextView) itemView.findViewById(R.id.guideme_detail_textview);
         }
-        if(viewType == TYPE_CELL)
-        questionTextView = ((TextView) itemView.findViewById(R.id.questionText));
+        if(viewType == TYPE_CELL) {
+            questionTextView = ((TextView) itemView.findViewById(R.id.questionText));
+            checkbox = (CheckBox) itemView.findViewById(R.id.checkBox);
+        }
     }
 
-    private void initHeader(){
 
-    }
-
-    private void initGuide(){
-
-    }
-
-    private void  initCell(){
-
-    }
 
 }
