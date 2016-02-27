@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueOne"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/icon_smile"
+            android:layout_width="@dimen/dim_comm_icon_size"
+            android:layout_height="@dimen/dim_comm_icon_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_smile_white" />
+
+        <TextView
+            android:id="@+id/txt_smile"
+            style="@style/CommText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dim_comm_text_margin_left"
+            android:layout_toEndOf="@id/icon_smile"
+            android:text="@string/comm_smile" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/icon_chat"
+            android:layout_width="@dimen/dim_comm_icon_size"
+            android:layout_height="@dimen/dim_comm_icon_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_chat_white" />
+
+        <TextView
+            android:id="@+id/txt_chat"
+            style="@style/CommText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dim_comm_text_margin_left"
+            android:layout_toEndOf="@id/icon_chat"
+            android:text="@string/comm_chat" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/icon_guide_me"
+            android:layout_width="@dimen/dim_comm_icon_size"
+            android:layout_height="@dimen/dim_comm_icon_size"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_guideme_white" />
+
+        <TextView
+            android:id="@+id/txt_guide_me"
+            style="@style/CommText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dim_comm_text_margin_left"
+            android:layout_toEndOf="@id/icon_guide_me"
+            android:text="@string/comm_guide_me" />
+
+    </RelativeLayout>
+
+</LinearLayout>

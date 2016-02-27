@@ -134,4 +134,8 @@
     <string name="match_detail_about_me_detail">Basically I love life and I love living life. I enjoy the outdoors, traveling
     restaurants, laughing, going to cultural events, and socializing with quality people. Its just better living and sharing life with someone else</string>
 
+    <string name="comm_smile">Smile</string>
+    <string name="comm_chat">Chat</string>
+    <string name="comm_guide_me">Guide Me</string>
+
 </resources>

@@ -44,4 +44,9 @@
         <item name="android:textSize">@dimen/dim_match_detail_text_size</item>
     </style>
 
+    <style name="CommText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/dim_comm_text_size</item>
+    </style>
+
 </resources>
