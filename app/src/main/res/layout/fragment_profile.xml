@@ -21,6 +21,13 @@
             android:layout_height="@dimen/dim_chart_view_size"
             android:layout_below="@id/photo_view" />
 
+        <com.eharmony.hola.widget.CommView
+            android:id="@+id/comm_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_photo_info_container_size"
+            android:layout_above="@id/chart_view"
+            android:visibility="gone" />
+
         <com.eharmony.hola.widget.MatchDetailView
             android:id="@+id/match_detail_view"
             android:layout_width="match_parent"
@@ -28,6 +35,7 @@
             android:layout_below="@id/chart_view" />
 
         <ImageButton
+            android:id="@+id/plus"
             android:layout_width="@dimen/dim_floating_button_size"
             android:layout_height="@dimen/dim_floating_button_size"
             android:layout_alignParentEnd="true"
@@ -37,7 +45,7 @@
             android:layout_marginTop="@dimen/dim_floating_button_margin_top"
             android:background="@drawable/ripple_floating_button"
             android:elevation="@dimen/dim_floating_button_elevation"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
             android:src="@drawable/icon_plus_white" />
 
     </RelativeLayout>

@@ -93,11 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dim_match_detail_section_container_margin"
         android:layout_marginTop="@dimen/dim_match_detail_section_container_margin"
+        android:gravity="center"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:id="@+id/icon_kids"
@@ -108,6 +110,7 @@
 
             <TextView
                 android:id="@+id/text_kids"
+                style="@style/MatchDetailCTA"
                 android:layout_width="@dimen/dim_match_detail_section_two_text_width"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -120,11 +123,13 @@
                 android:layout_width="@dimen/dim_match_detail_icon_size"
                 android:layout_height="@dimen/dim_match_detail_icon_size"
                 android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
                 android:layout_toEndOf="@id/text_kids"
                 android:src="@drawable/icon_drinks" />
 
             <TextView
-                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                style="@style/MatchDetailCTA"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
@@ -146,6 +151,7 @@
 
             <TextView
                 android:id="@+id/text_smoke"
+                style="@style/MatchDetailCTA"
                 android:layout_width="@dimen/dim_match_detail_section_two_text_width"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -158,11 +164,13 @@
                 android:layout_width="@dimen/dim_match_detail_icon_size"
                 android:layout_height="@dimen/dim_match_detail_icon_size"
                 android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
                 android:layout_toEndOf="@id/text_smoke"
                 android:src="@drawable/icon_pets" />
 
             <TextView
-                android:layout_width="@dimen/dim_match_detail_section_two_text_width"
+                style="@style/MatchDetailCTA"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dim_match_detail_section_two_text_margin_left"
@@ -185,11 +193,13 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/MatchDetailAboutMe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/match_detail_about_me" />
 
         <TextView
+            style="@style/MatchDetailAboutMeDetail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/match_detail_about_me_detail" />

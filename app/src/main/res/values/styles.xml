@@ -6,11 +6,6 @@
         <item name="android:textSize">@dimen/dim_photo_text_size</item>
     </style>
 
-    <style name="FloatingText">
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:textSize">@dimen/dim_floating_text_size</item>
-    </style>
-
     <style name="ChartPercentBase">
         <item name="android:textSize">@dimen/dim_chart_percent_size</item>
         <item name="android:textStyle">bold</item>
@@ -42,6 +37,21 @@
     <style name="MatchDetailTextField">
         <item name="android:textColor">@color/colorGreyTwo</item>
         <item name="android:textSize">@dimen/dim_match_detail_text_size</item>
+    </style>
+
+    <style name="MatchDetailCTA">
+        <item name="android:textColor">@color/colorGreyOne</item>
+        <item name="android:textSize">@dimen/dim_match_detail_cta_text_size</item>
+    </style>
+
+    <style name="MatchDetailAboutMe">
+        <item name="android:textColor">@color/colorGreyOne</item>
+        <item name="android:textSize">@dimen/dim_match_detail_about_me_size</item>
+    </style>
+
+    <style name="MatchDetailAboutMeDetail">
+        <item name="android:textColor">@color/colorGreyTwo</item>
+        <item name="android:textSize">@dimen/dim_match_detail_about_me_detail_size</item>
     </style>
 
     <style name="CommText">

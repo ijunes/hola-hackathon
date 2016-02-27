@@ -23,7 +23,7 @@
     <dimen name="dim_photo_info_separator_height">16dp</dimen>
     <dimen name="dim_photo_info_separator_width">1dp</dimen>
     <dimen name="dim_photo_info_Separator_margin">14dp</dimen>
-    <dimen name="dim_photo_text_size">16sp</dimen>
+    <dimen name="dim_photo_text_size">20sp</dimen>
 
     <dimen name="dim_floating_view_size">70dp</dimen>
     <dimen name="dim_floating_icon_size">24dp</dimen>
@@ -43,9 +43,12 @@
     <dimen name="dim_match_detail_icon_size">56dp</dimen>
     <dimen name="dim_match_detail_section_two_text_width">100dp</dimen>
     <dimen name="dim_match_detail_section_two_text_margin_left">16dp</dimen>
+    <dimen name="dim_match_detail_cta_text_size">14sp</dimen>
+    <dimen name="dim_match_detail_about_me_size">20sp</dimen>
+    <dimen name="dim_match_detail_about_me_detail_size">16sp</dimen>
 
-    <dimen name="dim_comm_text_size">16sp</dimen>
-    <dimen name="dim_comm_icon_size">40dp</dimen>
+    <dimen name="dim_comm_text_size">14sp</dimen>
+    <dimen name="dim_comm_icon_size">20dp</dimen>
     <dimen name="dim_comm_text_margin_left">8dp</dimen>
 
     <dimen name="padding_card">16dp</dimen>
