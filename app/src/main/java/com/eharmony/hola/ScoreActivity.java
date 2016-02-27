@@ -68,7 +68,11 @@ public class ScoreActivity extends AppCompatActivity {
                     //case 2:
                     //    return WebViewFragment.newInstance();
                     default:
-                        return RecyclerViewFragment.newInstance();
+                        RecyclerViewFragment fragment = RecyclerViewFragment.newInstance();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("position", position);
+                        fragment.setArguments(bundle);
+                        return fragment;
                 }
             }
 

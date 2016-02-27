@@ -46,22 +46,22 @@ public class RecyclerViewFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-
+        int currentPosition = getArguments().getInt("position");
         String[] questions = getResources().getStringArray(R.array.character);
         DimensionsModel model = new DimensionsModel(0, 98, "Character", "No marriage will ever thrive if one of the partners is not of “good character.”  Character, as used here, relates to one’s integrity; it has to do, primarily, with honesty.  A “character disorder,” for instance, refers to the tendency of a person to “lie, cheat, and steal” in an effort to gain personal advantage.  The first matter that needs to be screened is the character of both persons.");
-        mContentItems.add(model);
         DimensionsModel model1 = new DimensionsModel(0, 78, "Sociability", "The degree to which two people both desire interpersonal relationships, and excel at them, needs to be similar for their relationship to thrive.  For instance, some persons demonstrate high attraction to other people, while others prefer to spend significantly more time alone or in just one relationship.  Over time, this variable will be tested over and over.");
-        mContentItems.add(model);
         DimensionsModel model2 = new DimensionsModel(0, 74, "Ambition", "This dimension was a latecomer to our list of critical matching qualities.  It has to do with a need for stimulation, along with a personal strategy to pursue additional information through inquisitiveness.");
-        mContentItems.add(model);
         DimensionsModel model3 = new DimensionsModel(0, 68, "Curiosity", "This dimension was a latecomer to our list of critical matching qualities.  It has to do with a need for stimulation, along with a personal strategy to pursue additional information through inquisitiveness.");
-        mContentItems.add(model);
+
 
         ArrayList<DimensionsModel> dimensionModels = new ArrayList();
+
         dimensionModels.add(model);
         dimensionModels.add(model1);
         dimensionModels.add(model2);
         dimensionModels.add(model3);
+
+        mContentItems.add(dimensionModels.get(currentPosition));
 
         GuideModel guideModel = new GuideModel("Guide Me!", "We have some suggestions to help you start a conversation.Select 5 to send to this match.");
         mContentItems.add(guideModel);
