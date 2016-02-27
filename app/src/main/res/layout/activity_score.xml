@@ -41,7 +41,6 @@
         app:viewpager_disableToolbar="false"
         android:background="#dedede" />
 
-
     <view
         android:clickable="true"
         android:layout_width="@dimen/button_size"
