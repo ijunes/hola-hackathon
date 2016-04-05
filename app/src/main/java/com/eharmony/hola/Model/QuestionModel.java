@@ -1,4 +1,4 @@
-package com.eharmony.hola.Model;
+package com.eharmony.hola.model;
 
 import android.view.animation.Animation;
 
@@ -31,7 +31,8 @@ public class QuestionModel {
     public void setQuestionDescription(String questionDescription) {
         this.questionDescription = questionDescription;
     }
-    public Animation getAnimation(){
+
+    public Animation getAnimation() {
         return this.animation;
     }
 }

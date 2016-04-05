@@ -1,6 +1,6 @@
 package com.eharmony.hola.event;
 
-import com.eharmony.hola.Model.ChartModel;
+import com.eharmony.hola.model.ChartModel;
 
 /**
  * Created by lgarcia on 2/26/16.

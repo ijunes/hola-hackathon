@@ -16,6 +16,7 @@ import com.eharmony.hola.event.ChartClickEvent;
 import com.eharmony.hola.fragment.ProfileFragment;
 import com.eharmony.hola.util.Constants;
 import com.eharmony.hola.util.EventBus;
+import com.github.florent37.viewanimator.ViewAnimator;
 import com.squareup.otto.Subscribe;
 
 import butterknife.ButterKnife;

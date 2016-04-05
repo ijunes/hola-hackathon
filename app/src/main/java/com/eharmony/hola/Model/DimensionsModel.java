@@ -1,4 +1,4 @@
-package com.eharmony.hola.Model;
+package com.eharmony.hola.model;
 
 import android.view.animation.Animation;
 
@@ -12,6 +12,14 @@ public class DimensionsModel {
     private String dimensionTitle;
     private Animation animation;
 
+    public DimensionsModel(int id, int percentage, String dimensionTitle, String dimensionDescription, Animation animation) {
+        this.id = id;
+        this.percentage = percentage;
+        this.dimensionTitle = dimensionTitle;
+        this.dimensionDescription = dimensionDescription;
+        this.animation = animation;
+    }
+
     public int getId() {
         return id;
     }
@@ -20,34 +28,27 @@ public class DimensionsModel {
         this.id = id;
     }
 
-    public String getPercentage(){
+    public String getPercentage() {
         return new StringBuilder().append(String.valueOf(percentage)).append("%").toString();
     }
 
-    public String getDimensionTitle(){
+    public String getDimensionTitle() {
         return this.dimensionTitle;
     }
 
-
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.dimensionTitle = title;
     }
 
-    public String getDimensionDescription(){
+    public String getDimensionDescription() {
         return this.dimensionDescription;
     }
+
     public void setDimensionDescription(String dimensionDescription) {
         this.dimensionDescription = dimensionDescription;
     }
 
-    public Animation getAnimation(){
+    public Animation getAnimation() {
         return this.animation;
-    }
-    public DimensionsModel(int id, int percentage, String dimensionTitle, String dimensionDescription, Animation animation) {
-        this.id = id;
-        this.percentage = percentage;
-        this.dimensionTitle = dimensionTitle;
-        this.dimensionDescription = dimensionDescription;
-        this.animation = animation;
     }
 }

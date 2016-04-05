@@ -1,41 +1,38 @@
-package com.eharmony.hola.widgets;
+package com.eharmony.hola.widget;
 
 import android.app.Activity;
 import android.os.Handler;
-
 
 import mbanje.kurt.fabbutton.FabButton;
 
 public class ProgressHelper {
 
-    private int currentProgress = 0;
-    private Handler handle=new Handler();
     private final FabButton button;
     private final Activity activity;
+    private int currentProgress = 0;
+    private Handler handle = new Handler();
 
     public ProgressHelper(FabButton button, Activity activity) {
         this.button = button;
         this.activity = activity;
     }
 
-    private Runnable getRunnable(final Activity activity, final int delta){
+    private Runnable getRunnable(final Activity activity, final int delta) {
         return new Runnable() {
             @Override
             public void run() {
-                if(delta>=0){
+                if (delta >= 0) {
                     currentProgress += delta;
-                }
-                else{
+                } else {
                     currentProgress -= 20;
                 }
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         button.setProgress(currentProgress);
-                        if(currentProgress == 100){
+                        if (currentProgress == 100) {
                             startIndeterminate();
-                        }
-                        else if(currentProgress > 110){
+                        } else if (currentProgress > 110) {
                             button.onProgressCompleted();
                         }
                     }
@@ -57,14 +54,14 @@ public class ProgressHelper {
         getRunnable(activity, 0).run();
     }
 
-    public void incrementCount(){
-        if(currentProgress == 0){
+    public void incrementCount() {
+        if (currentProgress == 0) {
             startDeterminate();
         }
         getRunnable(activity, 20).run();
     }
 
-    public void decrementCount(){
+    public void decrementCount() {
         getRunnable(activity, -20).run();
     }
 

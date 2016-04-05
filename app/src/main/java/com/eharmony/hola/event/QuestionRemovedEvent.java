@@ -10,7 +10,8 @@ public class QuestionRemovedEvent {
         this.id = id;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return String.valueOf(id);
     }
 }

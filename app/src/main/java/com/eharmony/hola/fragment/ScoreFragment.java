@@ -11,29 +11,26 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.eharmony.hola.Model.DimensionsModel;
-import com.eharmony.hola.Model.GuideModel;
-import com.eharmony.hola.Model.QuestionModel;
 import com.eharmony.hola.R;
 import com.eharmony.hola.adapter.ScoreViewAdapter;
+import com.eharmony.hola.model.DimensionsModel;
+import com.eharmony.hola.model.GuideModel;
+import com.eharmony.hola.model.QuestionModel;
 import com.github.florent37.materialviewpager.MaterialViewPagerHelper;
 import com.github.florent37.materialviewpager.adapter.RecyclerViewMaterialAdapter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewFragment extends Fragment {
-
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+public class ScoreFragment extends Fragment {
 
     private static final int ITEM_COUNT = 10;
-
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
     private List<Object> mContentItems = new ArrayList<>();
 
-    public static RecyclerViewFragment newInstance() {
-        return new RecyclerViewFragment();
+    public static ScoreFragment newInstance() {
+        return new ScoreFragment();
     }
 
     @Override
@@ -75,7 +72,7 @@ public class RecyclerViewFragment extends Fragment {
 
         mContentItems.add(guideModel);
 
-        for(int i=0; i<questions.length-1; i++){
+        for (int i = 0; i < questions.length - 1; i++) {
             mContentItems.add(new QuestionModel(i, questions[i], slideFromLeft));
         }
 

@@ -5,15 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
 
-import com.eharmony.hola.Model.DimensionsModel;
-import com.eharmony.hola.Model.GuideModel;
-import com.eharmony.hola.Model.QuestionModel;
 import com.eharmony.hola.R;
 import com.eharmony.hola.event.QuestionRemovedEvent;
 import com.eharmony.hola.event.QuestionSelectedEvent;
+import com.eharmony.hola.model.DimensionsModel;
+import com.eharmony.hola.model.GuideModel;
+import com.eharmony.hola.model.QuestionModel;
 import com.eharmony.hola.util.EventBus;
 import com.eharmony.hola.views.DimensionViewHolder;
 
@@ -24,12 +23,12 @@ import java.util.List;
  */
 public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> {
 
-    List<Object> contents;
-
     static final int TYPE_HEADER = 0;
     static final int TYPE_GUIDE_CELL = 1;
     static final int TYPE_CELL = 2;
+    List<Object> contents;
     private int lastPosition = -1;
+
     public ScoreViewAdapter(List<Object> contents) {
         this.contents = contents;
     }
@@ -40,7 +39,7 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
             case 0:
                 return TYPE_HEADER;
             case 1:
-               return  TYPE_GUIDE_CELL;
+                return TYPE_GUIDE_CELL;
             default:
                 return TYPE_CELL;
         }
@@ -62,7 +61,7 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
                 return new DimensionViewHolder(view, viewType) {
                 };
             }
-            case TYPE_GUIDE_CELL:{
+            case TYPE_GUIDE_CELL: {
                 view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.card_item_medium, parent, false);
                 return new DimensionViewHolder(view, viewType) {
@@ -100,10 +99,9 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
                 holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if(isChecked) {
+                        if (isChecked) {
                             EventBus.INSTANCE.getBus().post(new QuestionSelectedEvent(questionModel.getQuestionId()));
-                        }
-                        else{
+                        } else {
                             EventBus.INSTANCE.getBus().post(new QuestionRemovedEvent(questionModel.getQuestionId()));
                         }
                     }
@@ -112,10 +110,9 @@ public class ScoreViewAdapter extends RecyclerView.Adapter<DimensionViewHolder> 
         }
     }
 
-    private void setMainAnimation(DimensionViewHolder holder, int position, Animation animation){
+    private void setMainAnimation(DimensionViewHolder holder, int position, Animation animation) {
         // If the bound view wasn't previously displayed on screen, it's animated
-        if (position > this.lastPosition)
-        {
+        if (position > this.lastPosition) {
             holder.mainLayout.startAnimation(animation);
             lastPosition = position;
         }

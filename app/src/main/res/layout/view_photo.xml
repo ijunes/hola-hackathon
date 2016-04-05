@@ -21,7 +21,8 @@
         android:background="@drawable/photo_gradient"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/dim_photo_info_container_padding">
+        android:padding="@dimen/dim_photo_info_container_padding"
+        android:id="@+id/profile_image_text_layout">
 
         <TextView
             android:id="@+id/age"

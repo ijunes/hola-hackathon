@@ -1,4 +1,4 @@
-package com.eharmony.hola.Model;
+package com.eharmony.hola.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,12 +7,26 @@ import android.os.Parcelable;
  * Created by lgarcia on 2/26/16.
  */
 public class ChartModel implements Parcelable {
+    public static final Creator<ChartModel> CREATOR = new Creator<ChartModel>() {
+        public ChartModel createFromParcel(Parcel source) {
+            return new ChartModel(source);
+        }
+
+        public ChartModel[] newArray(int size) {
+            return new ChartModel[size];
+        }
+    };
     private final int _id;
     private final int value;
 
     public ChartModel(int _id, int value) {
         this._id = _id;
         this.value = value;
+    }
+
+    protected ChartModel(Parcel in) {
+        this._id = in.readInt();
+        this.value = in.readInt();
     }
 
     public int get_id() {
@@ -33,19 +47,4 @@ public class ChartModel implements Parcelable {
         dest.writeInt(this._id);
         dest.writeInt(this.value);
     }
-
-    protected ChartModel(Parcel in) {
-        this._id = in.readInt();
-        this.value = in.readInt();
-    }
-
-    public static final Creator<ChartModel> CREATOR = new Creator<ChartModel>() {
-        public ChartModel createFromParcel(Parcel source) {
-            return new ChartModel(source);
-        }
-
-        public ChartModel[] newArray(int size) {
-            return new ChartModel[size];
-        }
-    };
 }

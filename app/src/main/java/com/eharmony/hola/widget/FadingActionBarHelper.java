@@ -1,4 +1,4 @@
-package com.eharmony.hola.widgets;
+package com.eharmony.hola.widget;
 
 import android.app.ActionBar;
 import android.graphics.drawable.Drawable;
@@ -7,10 +7,10 @@ import android.util.Log;
 
 public class FadingActionBarHelper {
     private static final String TAG = "FadingActionBarHelper";
+    private final ActionBar mActionBar;
     private int mAlpha = 255;
     private Drawable mDrawable;
     private boolean isAlphaLocked;
-    private final ActionBar mActionBar;
 
     public FadingActionBarHelper(ActionBar actionBar) {
         this.mActionBar = actionBar;
@@ -21,15 +21,11 @@ public class FadingActionBarHelper {
         this.setActionBarBackgroundDrawable(drawable);
     }
 
-    public void setActionBarBackgroundDrawable(Drawable drawable) {
-        this.setActionBarBackgroundDrawable(drawable, true);
-    }
-
     public void setActionBarBackgroundDrawable(Drawable drawable, boolean mutate) {
-        this.mDrawable = mutate?drawable.mutate():drawable;
+        this.mDrawable = mutate ? drawable.mutate() : drawable;
         this.mActionBar.setBackgroundDrawable(this.mDrawable);
-        if(this.mAlpha == 255) {
-            if(VERSION.SDK_INT >= 19) {
+        if (this.mAlpha == 255) {
+            if (VERSION.SDK_INT >= 19) {
                 this.mAlpha = this.mDrawable.getAlpha();
             }
         } else {
@@ -42,11 +38,19 @@ public class FadingActionBarHelper {
         return this.mDrawable;
     }
 
+    public void setActionBarBackgroundDrawable(Drawable drawable) {
+        this.setActionBarBackgroundDrawable(drawable, true);
+    }
+
+    public int getActionBarAlpha() {
+        return this.mAlpha;
+    }
+
     public void setActionBarAlpha(int alpha) {
-        if(this.mDrawable == null) {
+        if (this.mDrawable == null) {
             Log.w("FadingActionBarHelper", "Set action bar background before setting the alpha level!");
         } else {
-            if(!this.isAlphaLocked) {
+            if (!this.isAlphaLocked) {
                 this.mDrawable.setAlpha(alpha);
             }
 
@@ -54,18 +58,14 @@ public class FadingActionBarHelper {
         }
     }
 
-    public int getActionBarAlpha() {
-        return this.mAlpha;
+    public boolean isActionBarAlphaLocked() {
+        return this.isAlphaLocked;
     }
 
     public void setActionBarAlphaLocked(boolean lock) {
-        if(this.isAlphaLocked != (this.isAlphaLocked = lock) && !this.isAlphaLocked) {
+        if (this.isAlphaLocked != (this.isAlphaLocked = lock) && !this.isAlphaLocked) {
             this.setActionBarAlpha(this.mAlpha);
         }
 
-    }
-
-    public boolean isActionBarAlphaLocked() {
-        return this.isAlphaLocked;
     }
 }

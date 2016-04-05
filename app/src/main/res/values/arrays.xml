@@ -19,10 +19,11 @@
         <item>"Where?"</item>
         <item>"Where?"</item>
     </string-array>
-    <string-array name="family">
-        <item>"Why?"</item>
-        <item>"Who?"</item>
-        <item>"Where?"</item>
+    <string-array name="dimensions">
+        <item>"Character"</item>
+        <item>"Sociability"</item>
+        <item>"Ambition"</item>
+        <item>"Curiosity"</item>
     </string-array>
     <string-array name="friendships">
         <item>"Why?"</item>

@@ -1,4 +1,4 @@
-package com.eharmony.hola.Model;
+package com.eharmony.hola.model;
 
 import android.view.animation.Animation;
 
@@ -9,20 +9,22 @@ public class GuideModel {
     String guideTitle;
     String guideText;
     Animation animation;
-    public GuideModel(final String guideTitle, final String guideText, final Animation animation){
+
+    public GuideModel(final String guideTitle, final String guideText, final Animation animation) {
         this.guideTitle = guideTitle;
         this.guideText = guideText;
         this.animation = animation;
     }
 
-    public String getGuideTitle(){
+    public String getGuideTitle() {
         return this.guideTitle;
     }
 
-    public String getGuideText(){
+    public String getGuideText() {
         return this.guideText;
     }
-    public Animation getAnimation(){
+
+    public Animation getAnimation() {
         return this.animation;
     }
 

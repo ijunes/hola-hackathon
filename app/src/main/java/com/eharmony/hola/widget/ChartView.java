@@ -1,17 +1,15 @@
 package com.eharmony.hola.widget;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.eharmony.hola.Model.ChartModel;
 import com.eharmony.hola.R;
 import com.eharmony.hola.event.ChartClickEvent;
+import com.eharmony.hola.model.ChartModel;
 import com.eharmony.hola.util.ChartGenerator;
 import com.eharmony.hola.util.Constants;
 import com.eharmony.hola.util.EventBus;
@@ -20,11 +18,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
@@ -52,6 +46,30 @@ public class ChartView extends LinearLayout {
     // ===========================================================
     // Constructors
     // ===========================================================
+    // ===========================================================
+    // Inner and Anonymous Classes
+    // ===========================================================
+    private OnClickListener onClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ChartModel chartModel = null;
+            int index;
+            if (v == barChart) {
+                index = 0;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
+            } else if (v == highestContainer) {
+                index = 0;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
+            } else if (v == midContainer) {
+                index = 1;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
+            } else if (v == lowContainer) {
+                index = 2;
+                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
+            }
+            EventBus.INSTANCE.getBus().post(new ChartClickEvent(chartModel));
+        }
+    };
 
     public ChartView(Context context) {
         this(context, null);
@@ -60,6 +78,9 @@ public class ChartView extends LinearLayout {
     public ChartView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
+    // ===========================================================
+    // Getter & Setter
+    // ===========================================================
 
     public ChartView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -67,9 +88,6 @@ public class ChartView extends LinearLayout {
         final LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_chart, this);
     }
-    // ===========================================================
-    // Getter & Setter
-    // ===========================================================
 
     // ===========================================================
     // Methods for/from SuperClass/Interfaces
@@ -88,6 +106,7 @@ public class ChartView extends LinearLayout {
 
         init();
     }
+
     // ===========================================================
     // Methods
     // ===========================================================
@@ -159,28 +178,4 @@ public class ChartView extends LinearLayout {
         barChart.setOnClickListener(onClickListener);
 
     }
-    // ===========================================================
-    // Inner and Anonymous Classes
-    // ===========================================================
-    private OnClickListener onClickListener = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ChartModel chartModel = null;
-            int index;
-            if (v == barChart) {
-                index = 0;
-                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
-            } else if (v == highestContainer) {
-                index = 0;
-                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
-            } else if (v == midContainer) {
-                index = 1;
-                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
-            } else if (v == lowContainer) {
-                index = 2;
-                chartModel = new ChartModel(index, (int) yValues.get(index).getVal());
-            }
-            EventBus.INSTANCE.getBus().post(new ChartClickEvent(chartModel));
-        }
-    };
 }
