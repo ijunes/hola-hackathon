@@ -1,1 +1,1 @@
-# hack-hola
+Android Hackathon Project
